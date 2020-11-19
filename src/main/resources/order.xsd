@@ -1,0 +1,50 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://turntabl.com/ConsumerValidator"
+           targetNamespace="http://turntabl.com/ConsumerValidator"
+           elementFormDefault="qualified">
+
+    <xs:element name="sendOrderRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="portfolioId" type="xs:int"/>
+                <xs:element name="ticker" type="xs:string"/>
+                <xs:element name="quantity" type="xs:int"/>
+                <xs:element name="side" type="xs:string"/>
+                <xs:element name="price" type="xs:double"/>
+                <xs:element name="algorithm" type="xs:string"/>
+                <xs:element name="status" type="xs:string"/>
+                <xs:element name="state" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="sendOrderResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="status_code" type="xs:int"/>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="order">
+        <xs:sequence>
+            <xs:element name="portfolioId" type="xs:int"/>
+            <xs:element name="ticker" type="xs:string"/>
+            <xs:element name="quantity" type="xs:int"/>
+            <xs:element name="side" type="xs:string"/>
+            <xs:element name="price" type="xs:double"/>
+            <xs:element name="algorithm" type="xs:string"/>
+            <xs:element name="status" type="xs:string"/>
+            <xs:element name="state" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="serviceStatus">
+        <xs:sequence>
+            <xs:element name="statusCode" type="xs:string"/>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
